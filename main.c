@@ -124,8 +124,40 @@ int main()
             }
             break;
 
-            case 4 :
-            printf("||Simple Statistics||\n");
+            case 4 : 
+            {
+                printf("||Simple Statistics||\n");
+                int n;
+                printf("How many numbers? ");
+                scanf("%d", &n);
+
+                if (n <= 0) {
+                printf("Invalid number\n");
+                break;
+            }
+
+                double num, sum = 0, min, max;
+
+                for (int i = 0; i < n; i++) {
+                printf("Enter number %d: ", i + 1);
+                scanf("%lf", &num);
+
+                sum += num;
+                if (i == 0) {
+                min = max = num;
+                } else {
+                if (num < min) min = num;
+                if (num > max) max = num;
+        }
+    }
+
+                printf("Sum: %.2f\n", sum);
+                printf("Average: %.2f\n", sum / n);
+                printf("Min: %.2f\n", min);
+                printf("Max: %.2f\n", max);
+
+                break;
+            }
             break;
 
             default:
